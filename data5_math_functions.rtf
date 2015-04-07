@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red56\green159\blue87;}
+\margl1440\margr1440\vieww14840\viewh14860\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs30 \cf0 It's pretty obvious 
+\i why
+\i0  you'd want to be able to add, subtract, and multiply bits of quantitative data. Whether you're trying to arrive at some world-shaking conclusion, or to build a shopping cart, they're all pretty useful operations.\
+\
+\
+There are a couple, slightly less common, mathematical functions that can actually save you from having to do a lot of math and code-writing\'97if you know they exist\'97and that's what this slideshow's all about.\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 THE ABSOLUTE FUNCTION
+\b0  will return the 
+\i absolute value
+\i0  of any number. What's an absolute value? Well, it's just the number itself.\
+\
+Or more precisely, the distance of that number from the number zero.\
+\
+On a number line, the number three is three places from zero. The number -3 is also three places from zero. \
+\
+|3| = 3		|-3| = 3	\
+\
+abs(3) = 3		abs(-3) = 3\
+\
+Why would you ever use this?\
+\
+Say you needed to figure out the difference between a negative and a positive number. You could just do some quick math, and come up with "the difference between 3 and -3 is 6!" \
+\
+But if you needed to do that for a LOT of numbers, and some of them were pretty huge, that's where ABS comes in handy.\
+\
+\ul What's the most money that a feature film lost in 2014?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ulnone \
+To answer this question, we need to subtract budget from gross, then, if the value returned is negative, ABS out the difference.\
+\
+\
+But how do you check whether or not the difference between budget and gross was a positive or negative number? With the 
+\b SIGNUM FUNCTION
+\b0 .\
+\
+The signum function\'97or just SIGN function, for short\'97finds the sign of a number for you. When you say, hey function, what's this number's sign, it can answer in only three ways: positive (which it returns as +1), negative (-1), or zero (0).\
+\
+Zero! We forgot about that in our original stab at a solution. So let's rephrase: \
+\
+To find out the biggest blockbuster bust, and how much it lost, we need to subtract budget from gross, then, if the value returned is negative 
+\i or zero
+\i0 , ABS out the difference.\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \ul \ulc0 What's the most money that a feature film lost in 2014?\ulnone \
+\
+[put function here]\
+\
+\
+\
+Here's another odd-yet-frequently-useful math function: 
+\b MODULO
+\b0 .\
+\
+The modulo function (or the "mod function") returns the 
+\i remainder
+\i0  of a division problem. Remember when you had a number that didn't go quite evenly into another? Like 23 divided by 5. \
+\
+[insert graphic of long division]\
+\
+Before you learned long division, you were stuck with a remainder of 3. \
+\
+\
+Sometimes, those remainders can be useful\'97especially for converting between units, like feet to inches or hours to minutes. \
+\
+The OMDB tells you how long movies are in minutes, but sometimes knowing hours + minutes is more useful. \
+\
+\
+Pretend you're planning a Harry Potter movie marathon. You'd like to figure out if it can all be done in one day, with time for performers between some of the films. \
+\
+\pard\pardeftab720
+
+\f1\fs26 \cf1 \cb2 \expnd0\expndtw0\kerning0
+\{"Title":"Harry Potter and the Sorcerer's Stone","Year":"2001","Rated":"N/A","Released":"2001-11-16","Runtime":"152 min",\
+\{"Title":"Harry Potter and the Chamber of Secrets","Year":"2002","Rated":"PG","Released":"2002-11-15","Runtime":"161 min"\
+\{"Title":"Harry Potter and the Prisoner of Azkaban","Year":"2004","Rated":"PG","Released":"2004-06-04","Runtime":"142 min",\
+\{"Title":"Harry Potter and the Goblet of Fire","Year":"2005","Rated":"PG-13","Released":"2005-11-18","Runtime":"157 min",
+\f0\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0  \
+
+\f1\fs26 \cf1 \cb2 \expnd0\expndtw0\kerning0
+\{"Title":"Harry Potter and the Order of the Phoenix","Year":"2007","Rated":"PG-13","Released":"2007-07-11","Runtime":"138 min"\
+\{"Title":"Harry Potter and the Half-Blood Prince","Year":"2009","Rated":"PG","Released":"2009-07-15","Runtime":"153 min"\
+\{"Title":"Harry Potter and the Deathly Hallows: Part 1","Year":"2010","Rated":"PG-13","Released":"2010-11-19","Runtime":"146 min"\
+\{"Title":"Harry Potter and the Deathly Hallows: Part 2","Year":"2011","Rated":"PG-13","Released":"2011-07-15","Runtime":"130 min"\
+\pard\pardeftab720
+
+\f0\fs30 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 If you need to figure out how many minutes remain, use a modulo!\
+\
+	Harry Potter and the Chamber of Secrets is 130 minutes long. \
+	There are 60 minutes in an hour.\
+\
+		130/60 = 2.1666666666666665, or: 
+\b 2 hours
+\b0  and change. \
+\
+	But how many minutes is .1666666666666665 of an hour? \
+	You could do some pretty labor-intensive algebra to find out. Or: use the MOD function!\
+\
+		130%60 = 
+\b 10 minutes
+\b0 \
+\
+	Harry Potter and the Chamber of Secrets is 2 hours and 10 minutes long. \
+\
+\
+\
+Another pair of useful functions are 
+\b FLOOR
+\b0  and 
+\b CEILING
+\b0 .\
+\
+Floor rounds a number to the largest integer that is equal to or smaller than the number.\
+\
+	floor(5) = 5	\
+	floor(5.5) = 5\
+\
+Ceiling rounds a number to the smallest integer that is equal to or greater than the number.\
+\
+	ceiling(5) = 5\
+	ceiling(5.5) = 6\
+\
+\
+In the same vein, there's a fabulous function called 
+\b ROUND
+\b0  that\'97you guessed it!\'97will round numbers off for you.\
+\
+And, there are some very cool syntax tricks that go along with it!\
+\
+The default is: round up to the nearest integer:\
+\
+	round(99672.85918) = 99673\
+\
+But you can also round to a specified number to decimal places:\
+	\
+	round(99672.85918, 2) = 99672.86\
+\
+And by places to the left of the decimal point as well:\
+\
+	round(99672.85918, -3) = 100000\
+\
+\
+\
+}
