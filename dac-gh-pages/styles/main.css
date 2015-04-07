@@ -1,0 +1,187 @@
+/* CURRENTLY IN: styles/main.css */
+
+.glbl--text-center {
+	text-align: center;
+}
+.glbl--m_left-2 {
+	margin-left: 2px;
+}
+.glbl--overflow-hid {
+	overflow: hidden;
+}
+.glbl--full-img {
+	width: 100%;
+	height: auto;
+	border: 1px solid black;
+}
+.glbl--xlarge-inp.input-lg {
+	height: 90px;
+	font-size: 2.35rem;
+}
+
+.glbl--bottom-0 {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+.glbl--hidden {
+	display: none;
+}
+.glbl--shown {
+	display: block;;
+}
+
+.glbl--width-90 {
+	width: 90%;
+	margin-left: 5%;
+}
+
+.post--link:hover {
+	background-color: transparent;
+}
+.metro-classes-header.glbl--top-0,
+.glbl--top-0 {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.glbl--m_top-20 {
+	margin-top: 20px;
+}
+
+.metro-classes-header.glbl--p_top-20 {
+	padding-top: 20px;
+}
+
+.button.ga--button-ovrd {
+	height: 2.5rem;
+	padding-top: 0.3rem;
+	margin-top: 20px;
+}
+.button.ga--button-h1 {
+	min-width: 0px;
+	min-height: 0px;
+	padding-top: 0.1rem;
+	padding-bottom: 0.1rem;
+	height: 2rem;
+	margin-top: 1.0rem;
+}
+.button.ga--inp-button {
+	margin-top: -5px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	height: 30px;
+	background-color: transparent;
+	color: white;
+	font-family: "PFDinTextCompProBold", Impact, Arial;
+}
+.button.ga--inp-button:focus {
+	background-color: transparent;
+}
+.button.ga--xsmall {
+	height: 1.5rem;
+	padding: 0.25rem 0.55rem;
+	font-size: 0.75rem;
+	min-width: 0px;
+	margin: 0.15rem;
+}
+
+.ga--pod-img {
+	width: 90%;
+	margin-left: 5%;
+	max-height: 250px;
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
+.public-footer {
+	position: relative;
+	z-index: 2;
+}
+
+.loader--wrapper {
+	text-align: center;
+}
+
+.loader--loading {
+	position: relative;
+	display: inline-block;
+	-webkit-transform: scale(0.5);
+}
+.loader--mask {
+	height: 60px;
+	width: 49px;
+	background-color: red;
+	position: absolute;
+	left: 23px;
+	top: 16px;
+}
+.loader--top-layer {
+	position: absolute;
+	left: 23px;
+	top: 18px;
+}
+.loader--bottom-layer {
+	-webkit-animation: rotater 3s infinite linear;
+	transform-origin: 47px 48.5px;
+}
+
+@-webkit-keyframes rotater {
+	from {
+		-webkit-transform: rotate( 0deg );
+	}
+	to {
+		-webkit-transform: rotate( 360deg );
+	}
+}
+
+.post--absolute-full {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.post--full-frame {
+	width: 100%;
+}
+
+.product.ga--product-saved:hover,
+.product.ga--product-saved {
+	background-color: rgb(35, 194, 188);
+}
+
+.product.ga--product-saved .fewd-input-hidden {
+	background-color: #1faca7;
+}
+
+.dropdown-arrow.ga--dropdown-arrow {
+	float: none;
+	color: white;
+}
+
+.active .main-nav-item.ga--main-nav-item {
+	background-color: white;
+	color: #ff0033;
+}
+.main-nav-item.ga--main-nav-item {
+	display: inline-block;
+	float: right;
+}
+.navigation-dropdown.ga--navigation-dropdown {
+	clear: right;
+}
+.navigation-dropdown.ga--navigation-dropdown a:hover {
+	background-color: transparent;
+}
+.main-nav-item.ga--main-nav-item:hover {
+	text-decoration: none;
+}
+.active .main-nav-item.ga--main-nav-item .dropdown-arrow.ga--dropdown-arrow,
+.main-nav-item.ga--main-nav-item:hover .dropdown-arrow.ga--dropdown-arrow {
+	color: #ff0033;
+}
+
+.ga--link-disabled {
+	pointer-events: none;
+	cursor: text;
+}

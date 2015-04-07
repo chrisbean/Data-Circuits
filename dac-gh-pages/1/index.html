@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+  <title>General Assembly Data Analytics Circuit</title>
+
+  <meta name="description" content="The Analytical Process">
+  <meta name="author" content="Dana C Reilly">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+   <link href="https://ga-core-production-herokuapp-com.global.ssl.fastly.net/assets/favicon-457864a24ef9216d266a9db330e606f1.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/ga_theme.css" id="theme">
+  <link rel='stylesheet' href="../styles/ga.css">
+  <link rel='stylesheet' href="../styles/all.css">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="../lib/css/atelier-heath.dark.css">
+  <!-- GA css port -->
+  <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+
+
+  <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section title="title-slide">
+        <h1 class="large">The Analytical Process</h1>
+        </section>
+
+        <section title="what-is-this-tutorial">
+          <p class="big">Your dive into data analysis should be guided <br>by a question you want answered.</p>
+          <br>
+          <ul>
+            <li class="fragment">
+              What are the health effects of drinking coffee?</span>
+            </li>
+            <li class="fragment">
+              Who will be this year’s World Cup champions?</span>
+            </li>
+            <li class="fragment">
+              How does my government spend its money?</span>
+            </li>
+            <li class="fragment">
+              How will graduating next year affect my future earnings?</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <p>Figuring out how to use data to answer these questions is not easy.</p>
+          <p class="fragment"><p class="big">Data analysis is a scientific process.</p></p>
+          <div class="grid-row two" style="text-align:left;">
+            <div class="column" style="padding:40px">
+              <p><span class="fragment">One film review might provide enough data for you to decide how to spend your Saturday night.</span></p>
+            </div>
+            <div class="column" style="padding:40px">
+              <p><span class="fragment">But what if your screenwriter friend asks for your help. She's writing a script and needs to know, "what genre of film performs best at the box office?"</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="graphics/one.png" data-background-size="80%">
+          <div class="grid-row two" style="text-align:left;">
+            <div class="column">
+              </br>
+            </div>
+            <div class="column" style="padding:40px;">
+              <h3>First, make sure you understand the problem or question you’d like answered.</h3>
+              <p>Your friend wants to know: <br>“What genre of film performs best at the box office?”</p>
+              <br>
+              <br>
+              <div class="fragment">
+                <div class="panel-grey" style="padding:10px;">
+                  <ul>
+                    <li>The performance of the film, what you’d like to explain, is called the <strong>dependent variable</strong>.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="graphics/one.png" data-background-size="80%">
+          <div class="grid-row two" style="text-align:left;">
+            <div class="column">
+              </br>
+            </div>
+            <div class="column" style="padding:40px;">
+              <h3>First, make sure you understand the problem or question you’d like answered.</h3>
+              <p>Your friend wants to know: <br>“What genre of film performs best at the box office?”</p>
+              <br>
+                <div class="panel-grey" style="padding:10px;">
+                  <ul>
+                    <li>The genre of the film, what you think may cause or predict the dependent variable, is called an <strong>independent variable</strong>.</li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="graphics/two.png" data-background-size="80%">
+          <div class="grid-row two" style="text-align:left;">
+            <div class="column">
+              </br>
+            </div>
+            <div class="column" style="padding:40px;">
+              <h3>Next, you need to identify what data you need and compile it in a spreadsheet.</h3>
+              <p>We'll use a site called <em>Box Office Mojo</em>, which tracks box office and movie publication data.</p>
+              <p>Here we’ll find a list of every Hollywood film released over the last 50 years and data on their title, studio, gross revenue domestic and foreign, year released, MPAA rating, and ticket sales.</p>
+              <div class="fragment" data-fragment-index="1">
+                <div class="panel-grey" style="padding:10px;" >
+                  <ul>
+                    <li>All the pieces of information that you gather is called a <strong>dataset</strong>.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="graphics/three.png" data-background-size="80%">
+          <div class="grid-row two" style="text-align:left;">
+            <div class="column">
+              </br>
+            </div>
+            <div class="column" style="padding:40px;">
+              <h3>It’s crucial that you understand what’s in your dataset.</h3>
+              <p>Data comes in all sorts of shapes and sizes.</p>
+              <p class="fragment" data-fragment-index="2">The number of tickets sold and the total revenue grossed by our films are examples of quantitative data.</p>
+              <p class="fragment" data-fragment-index="3">The genre and the titles of our films are examples of qualitative data.</p>
+              <div class="fragment" data-fragment-index="1">
+                <div class="panel-grey" style="padding:10px;" >
+                  <ul>
+                    <li>Is the data <strong>quantitative</strong>—that is, information that can be measured and expressed with numbers?</li>
+                    <li>Is the data <strong>qualitative</strong>—that is, information that can't actually be measured?</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="graphics/four.png" data-background-size="80%">
+          <div class="grid-row two" style="text-align:left;">
+            <div class="column">
+              </br>
+            </div>
+            <div class="column" style="padding:40px;">
+              <h3>Before we analyze it, we need to make sure our data is “clean.”</h3>
+              <p class="fragment">Maybe someone at IMDB wrote the wrong release date for <em>Gone with the Wind</em>, and we would need to correct that.<p>
+              <p class="fragment">Additionally, to compare the revenue of films across 50 years we need to adjust for inflation. So historical dollar amounts should be converted to 2015 USD.</p>
+              <br>
+            <div class="fragment">
+            <div class="panel-grey" style="padding:10px;" >
+              <ul>
+                <li>
+                  <strong>Raw data</strong> is data that has not yet been manipulated or processed. It usually contains errors, duplicates and missing data.</li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </section>
+ 
+        <section data-background="graphics/five.png" data-background-size="80%">
+          <div class="grid-row two" style="text-align:left;">
+            <div class="column">
+              </br>
+            </div>
+            <div class="column" style="padding:40px;">
+              <h3>Finally, we get to the good stuff!</h3>
+              <p>A smart strategy is to start by looking at one variable—let’s say genre.</p>
+              <p>What is the most common genre in the data set? How often is each genre in the top 10 highest-grossing films each year?</p>
+              <p>Making graphs with our data makes it easier for us to spot patterns and gain new insights.</p>
+              <div class="fragment" data-fragment-index="1">
+              <div class="panel-grey" style="padding:10px;">
+                <ul>
+                  <li>This approach to data analysis is known as <strong>Exploratory Analysis</strong>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="graphics/six.png" data-background-size="80%">
+          <div class="grid-row two" style="text-align:left;">
+            <div class="column">
+              </br>
+            </div>
+            <div class="column" style="padding:40px;">
+              <h3>Your presentation needs to tell your story.</h3>
+              <p>Our data problem began with a question, and through analysis, it should end with a clear narrative.</p>
+              <p>As the great Edward Tufte says,
+              <quote>“There are right ways and wrong ways to show data; there are displays that reveal the truth and displays that do not.”</quote></p>
+              <br>
+              <div class="panel-grey" style="padding:10px;">
+                <ul>
+                  <li><strong>Data Visualizations</strong> do not simply display information, they tell a story to your audience.</li>
+                </ul>
+            </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="graphics/full-process.png" data-background-size="80%" data-background-transition="slide">
+              <div class="grid-row two">
+                <div class="column">
+                  <br>
+                </div>
+                <div class="column">
+                  <p class="big">This six-step process will ensure <br>you draw actionable insights from your data.</p>
+                </div>
+              </div>
+        </section>
+
+        <section data-background="graphics/video.gif" data-background-size="80%" data-background-transition="slide">
+          <div class="grid-row two">
+            <div class="column">
+              <br>
+              <br>
+              <br>
+            </div>
+            <div class="column">
+              <h3>But it shouldn't end there!</h3>
+              <p>The data you collect and and the analysis you generate can be used to address new questions.</p>
+            </div>
+          </div>
+        </section>
+
+        <section title="last-slide">
+          <h1>Next Up:</h1>
+          <a href="https://circuits.generalassemb.ly/student/38/units/57">Click here to start the "Data Visualization" Video</a>
+        </section>
+
+<!-- end of slides -->
+      </div>
+
+      <aside class="footer">
+        <div class="toc">
+        </div>
+      </aside>
+
+      <aside class="get_started">
+        <div id= "get_started" class="floating">
+        </div>
+      </aside>
+
+
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        slideNumber: false,
+        width: 1366,
+        height: 768,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+      Reveal.addEventListener('slidechanged', function(event) {
+        removeTransition(event.indexh);
+        showSlideNumber(event.indexh);
+        showGetStarted(event.indexh);
+      });
+
+      Reveal.addEventListener('ready', function(event) {
+        removeTransition(event.indexh);
+        showSlideNumber(event.indexh);
+        showGetStarted(event.indexh);
+      });
+
+      function removeTransition(indexh) {
+        if (indexh === 3 || indexh === 4 || indexh === 5 || indexh === 6 || indexh === 7 || indexh === 8 || indexh === 9 || indexh === 10 || indexh === 11) {
+          Reveal.configure({
+           transition: Reveal.getQueryHash().transition || 'none', });;
+        } else {
+          Reveal.configure({
+           transition: Reveal.getQueryHash().transition || 'slide', });;
+        }
+      }
+
+      function showSlideNumber(indexh) {
+        if (indexh === 0) {
+          $('.slide-number').hide();
+        } else {
+          $('.slide-number').text(indexh);
+          $('.slide-number').show();
+        }
+      }
+
+      function showGetStarted(indexh) {
+        if (indexh === 0) {
+          $('.floating').show();
+        }
+        if (indexh !== 0) {
+          $('.floating').hide();
+        }
+      }
+    </script>
+
+  </body>
+</html>

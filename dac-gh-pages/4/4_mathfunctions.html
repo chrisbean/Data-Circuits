@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+  <title>General Assembly Data Analytics Circuit</title>
+
+  <meta name="description" content="Mathematical Functions">
+  <meta name="author" content="Christine A Bower">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+   <link href="https://ga-core-production-herokuapp-com.global.ssl.fastly.net/assets/favicon-457864a24ef9216d266a9db330e606f1.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/ga_theme.css" id="theme">
+
+<!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="../lib/css/atelier-heath.dark.css">
+
+<!-- GA css port -->
+  <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='../styles/ga.css'>
+   <link rel='stylesheet' href='../styles/all.css'>
+<!--
+  <link rel='stylesheet' href='../styles/main.css'>
+-->
+
+
+<!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+<!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]
+-->
+</head>
+
+<body>
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+
+    <section>
+      <h1>MATHEMATICAL FUNCTIONS</h1>
+    </section>
+
+    <section title="1">
+      <p>SQL allows you to use basic operators like +, *, > (and so forth) to add, multiply, subtract, divide, and compare quantitative data.</p>
+    </section>
+      
+    <section title="2">
+        <p>But it also gives you less well-known mathematical functions that can save you from having to do a lot of math and code-writing&mdash;if you know they exist&mdash;and that's what this activity's all about.</p>
+    </section>
+
+    <section title="3">      
+      <p><strong>THE ABSOLUTE FUNCTION</strong> will return the absolute value of any number. <br>What's an absolute value? Well, it's just the number itself.</p>
+
+      <div class="fragment">Or more precisely, the distance of that number from the number zero.</div>
+    </section>
+
+    <section title="4">
+      <p>On a number line, the number three is three places from zero.</p>
+      <img src="graphics/numline_pos.png" height="130px"><br><br>
+      <div class="fragment">The number -3 is also three places from zero.<br>
+      <img src="graphics/numline_neg.png" height="130px"> </div>
+
+    </section>
+
+    <section title="5">
+      <p>The mathy way to say this is:</p>
+      <p style="text-align:center;">|3| = 3<span style="padding-left:2em;">|-3| = 3</span></p>
+
+      <p>The programmery way to say it is:</p>
+      <p style="text-align:center;">abs(3) = 3<span style="padding-left:2em;">abs(-3) = 3</span></p>
+    </section>
+
+    <section title="6">
+      <p>So, why abs?</p>
+      <p>If you need to figure out the difference between a negative and a positive number, you could just do some quick math, and come up with "the difference between 3 and -3 is 6!" </p>
+    </section>
+
+    <section title="7">
+        <p>BUT if you need to do that for a LOT of numbers, and some of them were pretty huge, that's where ABS comes in handy!</p>
+    </section>
+
+      <section title="8">
+        <h3>What's the most money that a feature film lost in 2014?</h3>
+        <p>To answer this question, we need to subtract budget from gross, then, if the value returned is negative, ABS out the difference.</p>
+      </section>
+
+      <section title="9">
+        <p>But how do you check whether or not the difference between budget and gross was a positive or negative number? With the <strong>SIGNUM FUNCTION</strong>.</p>
+      </section>
+
+      <section title="10">
+        <p>The signum function&mdash;or just <strong>SIGN</strong> function, for short&mdash;finds the sign of a number for you. </p>
+        <p>When you say, "hey function, what's this number's sign?" it can answer in only three ways: positive (which it returns as +1), negative (-1), or zero (0).</p>
+      </section>
+
+      <section title="11">
+        <p>Zero! We forgot about that in our original stab at a solution. So let's rephrase: </p>
+
+        <p>To find out the biggest blockbuster bust, and how much it lost, we need to subtract budget from gross, then, if the value returned is negative or zero, ABS out the difference.</p>
+      </section>
+
+      <section title="12">
+        <h3>What's the most money that a feature film lost in 2014?</h3>
+        <div>The query return would look like this: </div>
+      </section>
+
+      <section title="13">
+        <p>Here's another odd-yet-frequently-useful math function: <strong>MODULO</strong>.</p>
+      </section>
+
+      <section title="15">
+        <p>Please click here to head back to the Circuits platform.</p>
+      </section>
+
+<!--   
+      <section title="feedback form">
+        <div>
+          <iframe src="https://docs.google.com/forms/d/1pPKvTQRUxF-j5snyHWI-OD7YXGa6T_1p0lKUTI4Uhls/viewform?embedded=true"width="720px" height="600px" frameborder="0">Loading...</iframe>
+        </div>
+      </section> 
+-->
+
+    </div>
+
+      <aside class="footer">
+        <div class="toc">
+        </div>
+      </aside>
+
+  </div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+      
+<script>
+
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    slideNumber: false,
+    center: true,
+    width: 1366,
+    height: 768,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+    });
+
+  Reveal.addEventListener('slidechanged', function(event) {
+    removeTransition(event.indexh);
+    showSlideNumber(event.indexh);
+  });
+
+  Reveal.addEventListener('ready', function(event) {
+    removeTransition(event.indexh);
+    showSlideNumber(event.indexh);
+  });
+
+  function removeTransition(indexh) {
+    if (indexh === 8 || indexh === 15 ||indexh === 16 ||indexh === 17 ||indexh === 18 ||indexh === 19 ||indexh === 20 ||indexh === 21) {
+      Reveal.configure({
+       transition: Reveal.getQueryHash().transition || 'none', });;
+    } else {
+      Reveal.configure({
+       transition: Reveal.getQueryHash().transition || 'linear', });;
+    }
+  }
+
+  function showSlideNumber(indexh) {
+    if (indexh === 0) {
+      $('.slide-number').hide();
+    } else {
+      $('.slide-number').text(indexh);
+      $('.slide-number').show();
+    }
+  }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+    <title>General Assembly Data Analytics Circuit</title>
+
+    <meta name="description" content="Find the Best Chart for Your Data">
+    <meta name="author" content="Dana C Reilly">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+     <link href="https://ga-core-production-herokuapp-com.global.ssl.fastly.net/assets/favicon-457864a24ef9216d266a9db330e606f1.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+    <!-- GA css port -->
+    <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/ga_theme.css" id="theme">
+    <link rel='stylesheet' href="../styles/ga.css">
+    <link rel='stylesheet' href="../styles/all.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/atelier-heath.dark.css">
+     <!--
+    <link rel='stylesheet' href='../styles/main.css'>
+    -->
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+        <h1 class="large">Find the Best Chart for your Data</h1>
+        </section>
+
+        <section title="what-is-this-tutorial">
+         <p class="big">The data you collect is only as good as how well you can communicate its meaning.
+          <br>
+          <br>
+           This tutorial will help you choose the most useful chart.
+          </p>
+        </section>
+
+        <section style="text-align: left;">
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <p>Let’s work through an example.
+                <br>Say we want to answer the question, 
+                “What is the gender breakdown, in terms of total users, across social media networks?”</p>
+                <div class="fragment"><p>
+                Here is our dataset for 25 major sites:
+                </p></div>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                <div class="fragment">
+                  <table id="chicksrule">
+                    <thead>
+                      <tr>
+                        <th id="sitename">Social Media Site</th>
+                        <th id="females">Female Users*</th>
+                        <th id="males">Male Users*</th>
+                        <th id="muu">Monthly Unique Users*</th>
+                        <th id="percent">Percentage Female Uses</th>
+                      </tr>
+                    </thead>
+                    <tr>
+                      <td>Facebook</td>
+                      <td>670.8</td>
+                      <td>619.2</td>
+                      <td>1290</td>
+                      <td>52%</td>
+                    </tr>
+                    <tr>
+                      <td>YouTube</td>
+                      <td>480</td>
+                      <td>520</td>
+                      <td>1000</td>
+                      <td>48%</td>
+                    </tr>
+                    <tr>
+                      <td>Google+</td>
+                      <td>193.285</td>
+                      <td>256.215</td>
+                      <td>449.5</td>
+                      <td>43%</td>
+                    </tr>
+                    <tr>
+                      <td>Twitter</td>
+                      <td>139.655</td>
+                      <td>123.845</td>
+                      <td>263.5</td>
+                      <td>53%</td>
+                    </tr>
+                    <tr>
+                      <td>LinkedIn</td>
+                      <td>80.4</td>
+                      <td>120.6</td>
+                      <td>201</td>
+                      <td>40%</td>
+                    </tr>
+                    <tr>
+                      <td>Tumblr</td>
+                      <td>132.48</td>
+                      <td>51.52</td>
+                      <td>184</td>
+                      <td>72%</td>
+                    </tr>
+                    <tr>
+                      <td>Instagram</td>
+                      <td>79.5</td>
+                      <td>70.5</td>
+                      <td>150</td>
+                      <td>53%</td>
+                    </tr>
+                    <tr>
+                      <td>Vimeo</td>
+                      <td>67.15493</td>
+                      <td>81.84507</td>
+                      <td>149</td>
+                      <td>45%</td>
+                    </tr>
+                    <tr>
+                      <td>Reddit</td>
+                      <td>51</td>
+                      <td>76.5</td>
+                      <td>127.5</td>
+                      <td>40%</td>
+                    </tr>
+                    <tr>
+                      <td>Snapchat</td>
+                      <td>56</td>
+                      <td>24</td>
+                      <td>80</td>
+                      <td>70%</td>
+                    </tr>
+                    <tr>
+                      <td>Flickr</td>
+                      <td>34.2</td>
+                      <td>25.8</td>
+                      <td>60</td>
+                      <td>57%</td>
+                    </tr>
+                    <tr>
+                      <td>Slideshare</td>
+                      <td>26.66667</td>
+                      <td>33.33333</td>
+                      <td>60</td>
+                      <td>44%</td>
+                    </tr>
+                    <tr>
+                      <td>Pinterest</td>
+                      <td>39.171</td>
+                      <td>20.179</td>
+                      <td>59.35</td>
+                      <td>66%</td>
+                    </tr>
+                    <tr>
+                      <td>Soundcloud</td>
+                      <td>19.5</td>
+                      <td>30.5</td>
+                      <td>50</td>
+                      <td>39%</td>
+                    </tr>
+                    <tr>
+                      <td>Myspace</td>
+                      <td>21.266</td>
+                      <td>13.034</td>
+                      <td>34.3</td>
+                      <td>62%</td>
+                    </tr>
+                    <tr>
+                      <td>Foursquare</td>
+                      <td>18.6</td>
+                      <td>11.4</td>
+                      <td>30</td>
+                      <td>62%</td>
+                    </tr>
+                    <tr>
+                      <td>Deviant Art</td>
+                      <td>8.575</td>
+                      <td>8.925</td>
+                      <td>17.5</td>
+                      <td>49%</td>
+                    </tr>
+                    <tr>
+                      <td>LiveJournal</td>
+                      <td>8.8</td>
+                      <td>7.2</td>
+                      <td>16</td>
+                      <td>55%</td>
+                    </tr>
+                    <tr>
+                      <td>StumbleUpon</td>
+                      <td>7.9</td>
+                      <td>7.9</td>
+                      <td>15.8</td>
+                      <td>50%</td>
+                    </tr>
+                    <tr>
+                      <td>hi5</td>
+                      <td>3.384</td>
+                      <td>6.016</td>
+                      <td>9.4</td>
+                      <td>36%</td>
+                    </tr>
+                    <tr>
+                      <td>Last.fm</td>
+                      <td>2.5</td>
+                      <td>2.5</td>
+                      <td>5</td>
+                      <td>50%</td>
+                    </tr>
+                    <tr>
+                      <td>Quora</td>
+                      <td>1.3148</td>
+                      <td>2.1452</td>
+                      <td>3.46</td>
+                      <td>38%</td>
+                    </tr>
+                    <tr>
+                      <td>Meetup</td>
+                      <td>1.86</td>
+                      <td>1.14</td>
+                      <td>3</td>
+                      <td>62%</td>
+                    </tr>
+                    <tr>
+                      <td>Vine</td>
+                      <td>1.38</td>
+                      <td>0.92</td>
+                      <td>2.3</td>
+                      <td>60%</td>
+                    </tr>
+                    <tr>
+                      <td>Digg</td>
+                      <td>0.26</td>
+                      <td>0.34</td>
+                      <td>0.6</td>
+                      <td>43%</td>
+                    </tr>
+                  </table>
+                  <p class="small">*In Millions of Monthly Users</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="big">How do we decide which form of visualization will be most effective?</p>
+          <img src="graphics/chartschartscharts.gif">
+          <div class="fragment">
+          <p class="shmush">There are no definitive rules, but there are common use cases for each method that can guide us.</p>
+          </div>
+        </section>
+
+        <section title="blank">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li>Line Charts</span></li>
+                  <br>
+                  <li>Pie Charts</li>
+                  <br>
+                  <li>Scatter Charts</li>
+                  <br>
+                  <li>Histogram</li>
+                  <br>
+                  <li>Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <img src="graphics/blank.png">
+            </div>
+        </section>
+
+        <section>
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li><span style="background-color:#fbd334;">Line Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/line_example.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li><span style="background-color:#fbd334;">Line Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/line_example_note.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li><span style="background-color:#fbd334;">Line Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/line_example_note2.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-center="false">
+            <p>Using a line chart for our data wouldn't make sense.</p>
+            <p class="shmush">The line of the chart implies that there is a continuum between data points. <br> But you couldn't create a scale from <em>Facebook</em> to <em>YouTube</em> – there are no values between those points of data.</p>
+            <img src="graphics/linechart_nofit.png">
+        </section>
+
+        <section title="blank">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li>Line Charts</span></li>
+                  <br>
+                  <li>Pie Charts</li>
+                  <br>
+                  <li>Scatter Charts</li>
+                  <br>
+                  <li>Histogram</li>
+                  <br>
+                  <li>Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <img src="graphics/blank.png">
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Pie Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/pie_example.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Pie Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/pie_example_note.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Pie Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/pie_example_note2.png">
+              </div>
+            </div>
+        </section>
+
+
+
+        <section data-state="nocenter">
+            <p>We could use a pie chart to represent the user base of one site – as the number of male and female users add up to a meaningful whole.</p>
+            <br>
+            <img src="graphics/piechart_nofit.png">
+            <br>
+            <br>
+            <br>
+            <br>
+        </section>
+
+        <section data-state="nocenter">
+            <p>We could use a pie chart to represent the user base of one site – as the number of male and female users add up to a meaningful whole.</p>
+            <br>
+            <img src="graphics/piechart_toomany.png">
+            <p>However, it's very difficult to compare the size of multiple slices across pie charts.
+            <br>You would need to read the percentages—you might as well use a table instead.</p>
+        </section>
+
+        <section title="blank">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li>Line Charts</span></li>
+                  <br>
+                  <li>Pie Charts</li>
+                  <br>
+                  <li>Scatter Charts</li>
+                  <br>
+                  <li>Histogram</li>
+                  <br>
+                  <li>Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <img src="graphics/blank.png">
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</span></li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/scatter_example.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</span></li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/scatter_example_note.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</span></li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/scatter_example_note2.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="scatter-chart-no-fit">
+          <p class="shmush">We're not looking for a relationship between our variables, so a scatter graph won't help us.</p>
+          <img src="graphics/scatterchart_nofit.png">
+        </section>
+
+        <section title="blank">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li>Line Charts</span></li>
+                  <br>
+                  <li>Pie Charts</li>
+                  <br>
+                  <li>Scatter Charts</li>
+                  <br>
+                  <li>Histogram</li>
+                  <br>
+                  <li>Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <img src="graphics/blank.png">
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/histogram_example.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/histogram_example_note.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</span></li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Histogram</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/histogram_example_note2.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="histogram-no-fit">
+          <p class="shmush">To create a histogram of our dataset, we’d need to group our data points by a percent range, for example.</p>
+          <br>
+          <p class="shmush"><span class="fragment">This graph tells us that the most common percentage of women is 40-59%. Not a very useful insight.</span></p>
+          <img src="graphics/histogram_nofit.png">
+        </section>
+
+        <section title="blank">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li>Line Charts</span></li>
+                  <br>
+                  <li>Pie Charts</li>
+                  <br>
+                  <li>Scatter Charts</li>
+                  <br>
+                  <li>Histogram</li>
+                  <br>
+                  <li>Bar Charts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <img src="graphics/blank.png">
+            </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Bar Charts</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/bar_example.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+                <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Bar Charts</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/bar_example_note.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section title="charts">
+          <p>Let’s look at five of the most common types of charts analysts use:</p>
+          <br>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <ul>
+                  <li style="color:#e2e2e2;">Line Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Pie Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Scatter Charts</li>
+                  <br>
+                  <li style="color:#e2e2e2;">Histogram</li>
+                  <br>
+                  <li><span style="background-color:#fbd334;">Bar Charts</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <img src="graphics/bar_example_note2.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section title="bar-chart-fit">
+          <p>Ultimately, the story that we’re telling is how data compares across categories.
+          <br>
+          And this story can best be illustrated by a bar chart:</p>
+          <br>
+          <br>
+          <div class="fragment">
+            <img src="graphics/barchart_success.png">
+          </div>
+        </section>
+
+        <section title="bar-chart-sort">
+          <p class="shmush">Bar charts work by allowing the viewer to <em>quickly</em> assess the relationship between data points based on the lengths of the bars.</p>
+          <p class="shmush">So if your chart looks like a city skyline, you need to sort your data.</p>
+          <br>
+          <img src="graphics/barchart_success.png">
+        </section>
+
+        <section title="bar-chart-sort-fixed">
+          <p class="shmush">Can you tell which social media channel has the largest percent of female users? What about the smallest?</p>
+          <br>
+          <br>
+          <img src="graphics/barchart_success.png">
+          <br>
+        </section>
+
+        <section>
+          <p class="shmush">Can you tell which social media channel has the largest percent of female users? What about the smallest?</span></p>
+          <p class="shmush">Now we can clearly see that <em>Tumblr</em> has the largest proportion of women, while <em>hi5</em> has the smallest.</p>
+          <img src="graphics/barchart_crowded.png">
+        </section>
+
+        <section>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <p>Any chart that you have to struggle to read is not doing its job.</p>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 10px">
+                <img src="graphics/barchart_crowded.png">
+              </div>
+            </div>
+        </section>
+
+        <section>
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                  <p>Any chart that you have to struggle to read is not doing its job.</p>
+                  <p>To improve readability, we could rotate the access (give the labels some breathing room) and increase the white space between bars.</p>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 10px">
+                <img src="graphics/barchart_vertical.png">
+              </div>
+            </div>
+        </section>
+
+        <section title="bar-chart-colors">
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 10px">
+                <p>To further clarify which sites are dominated by men, by women, and which are equal, we could change the color of the bars.</p>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 10px">
+                <img src="graphics/barchart_vertical.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section title="bar-chart-colors-final">
+          <div class="grid-row one-two">
+            <div class="column">
+              <div style="margin-right: 40px">
+                <p>To further clarify which sites are dominated by men, by women, and which are equal, we could change the color of the bars.</p>
+                <p class="fragment">Now, at a glance, we can see which sites fall below or above a 50% female user base.</p>
+              </div>
+            </div>
+            <div class="column">
+              <div style="margin-right: 10px">
+                <img src="graphics/barchart_colors.png">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section title="last-slide">
+          <h1>Next Up:</h1>
+          <a href="https://circuits.generalassemb.ly/student/38/units/57">Click here to start the Unit 1 Quiz</a>
+        </section>
+      
+<!-- end of slides -->
+      </div>
+
+      <aside class="footer">
+        <div class="toc">
+        </div>
+      </aside>
+
+      <aside class="get_started">
+        <div id= "get_started" class="floating">
+        </div>
+      </aside>
+
+    </div>
+
+      <script src="../lib/js/head.min.js"></script>
+      <script src="../js/reveal.js"></script>
+      <script src="../js/ga.js"></script>
+      <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+      
+      <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+              controls: true,
+              progress: true,
+              history: true,
+              slideNumber: false,
+              center: true,
+              width: 1280,
+              height: 700,
+
+              transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+              // Optional reveal.js plugins
+              dependencies: [
+                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true }
+              ]
+            });
+
+          Reveal.addEventListener('slidechanged', function(event) {
+            removeTransition(event.indexh);
+            showSlideNumber(event.indexh);
+            showGetStarted(event.indexh);
+          });
+
+          Reveal.addEventListener('ready', function(event) {
+            removeTransition(event.indexh);
+            showSlideNumber(event.indexh);
+            showGetStarted(event.indexh);
+          });
+
+          function removeTransition(indexh) {
+            if (indexh === 4 || indexh === 5 || indexh === 6 || indexh === 7 || indexh === 10 || indexh === 11 || indexh === 12 ||indexh === 13 ||indexh === 16 ||indexh === 17 ||indexh === 18 ||indexh === 21 || indexh === 22 || indexh === 23 || indexh === 26 || indexh === 27 || indexh === 30 || indexh === 31 || indexh === 32 || indexh === 33 || indexh === 34 || indexh === 35 || indexh === 26 || indexh === 37 || indexh === 38) {
+              Reveal.configure({
+               transition: Reveal.getQueryHash().transition || 'none', });;
+            } else {
+              Reveal.configure({
+               transition: Reveal.getQueryHash().transition || 'slide', });;
+            }
+          }
+
+          function showSlideNumber(indexh) {
+            if (indexh === 0) {
+              $('.slide-number').hide();
+            } else {
+              $('.slide-number').text(indexh);
+              $('.slide-number').show();
+            }
+          }
+
+          function showGetStarted(indexh) {
+            if (indexh === 0) {
+              $('.floating').show();
+            }
+            if (indexh !== 0) {
+              $('.floating').hide();
+            }
+          }
+        </script>
+  </body>
+</html>

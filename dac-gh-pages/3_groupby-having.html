@@ -1,0 +1,328 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+  <title>General Assembly Data Analytics Circuit</title>
+
+  <meta name="description" content="Find the Best Chart for Your Data">
+  <meta name="author" content="Dana C Reilly">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+   <link href="https://ga-core-production-herokuapp-com.global.ssl.fastly.net/assets/favicon-457864a24ef9216d266a9db330e606f1.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+  <link rel="stylesheet" href="../css/reveal.css">
+  <link rel="stylesheet" href="../css/theme/ga_theme.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="../lib/css/atelier-heath.dark.css">
+
+  <!-- GA css port -->
+  <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='../styles/ga.css'>
+   <link rel='stylesheet' href='../styles/all.css'>
+   <!--
+  <link rel='stylesheet' href='../styles/main.css'>
+  -->
+
+
+<!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+      <section>
+        <h1>GROUP BY and HAVING</h1>
+      </section>
+
+        <section title="1">
+          <p >Querying discrete clusters of information is very useful for SQL users.</p>
+        </section>
+        
+        <section title="2">
+            <p>For example:</p>
+          <div class="fragment">
+            <p>Let's say you work at a major motion picture company. You're looking to make the next big summer blockbuster, but are trying to find the perfect lead. What can you do to easily comb through historical data?</p>
+          </div>
+          <span class="3">
+            
+          </span>
+        </section>
+
+        <section title="4">            
+           <p>Using an AGGREGATE function might only return an outlier. In order to get a more historically informed pull of information, we can use GROUP BY function.</p>
+        </section>
+
+        <section title="5">
+         <p class="big">Syntax</p>
+            <div class="panel-grey" style="text-aligh:left;">
+              <code>
+                SELECT column_name, aggregate_function(column_name)<br>
+              FROM table_name<br>
+              WHERE column_name operator value<br>
+              GROUP BY column_name;
+              </code>
+            </div>
+            <section>
+              <div class="panel-grey" style="text-aligh:left;">
+              <code>SELECT title , studio , year<br>
+              FROM film<br>
+              WHERE revM < 500 <br>
+              GROUP BY studio;</code>
+            </div>
+            </section>
+          <section>
+           
+          
+            
+          </section>
+        </section>
+
+        <section title="6">
+           <div>The query return would look like this: </div>
+           <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-031e">title</th>
+    <th class="tg-031e">studio</th>
+    <th class="tg-031e">year</th>
+  </tr>
+  <tr>
+    <td class="tg-031e">Beauty and the Beast</td>
+    <td class="tg-031e">BV</td>
+    <td class="tg-031e">1991</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Gladiator</td>
+    <td class="tg-031e">DW</td>
+    <td class="tg-031e">2000</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Alvin and the Chipmunks: The Squeakquel</td>
+    <td class="tg-031e">Fox</td>
+    <td class="tg-031e">2009</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Die Another Day</td>
+    <td class="tg-031e">MGM</td>
+    <td class="tg-031e">2002</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Dances with Wolves</td>
+    <td class="tg-031e">Orion</td>
+    <td class="tg-031e">1990</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">How to Train Your Dragon</td>
+    <td class="tg-031e">P/DW</td>
+    <td class="tg-031e">2010</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Indiana Jones and the Last Crusade</td>
+    <td class="tg-031e">Par.</td>
+    <td class="tg-031e">1989</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Angels &amp; Demons</td>
+    <td class="tg-031e">Sony</td>
+    <td class="tg-031e">2009</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Bruce Almighty</td>
+    <td class="tg-031e">Uni.</td>
+    <td class="tg-031e">2003</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">300</td>
+    <td class="tg-031e">WB</td>
+    <td class="tg-031e">2007</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Django Unchained</td>
+    <td class="tg-031e">Wein.</td>
+    <td class="tg-031e">2012</td>
+  </tr>
+</table>
+        </section>
+
+        <section title="7">
+            <p>GROUPBY allows you to pull particular parts of data, and quickly capture an idea. This is much easier than exporting a large part of the database to spreadsheet software and using a sort function</p>
+        </section>
+
+        <section title="8">
+          <p>Test out GROUPBY  <a href="http://sqlfiddle.com/#!9/67168/6">here</a></p>
+        </section>
+
+        <section title="9">
+          <p>So it turns out you're not as interested in leads that are movies from more than 5 years ago. What if you wanted to only look for leads who starred in movies in the past 5 years </p>
+        </section>
+
+        <section title="10">
+          <p>HAVING adds another level of filtering to your grouped queries, beyond the capabilities of WHERE</p>
+        </section>
+
+        <section title="11">
+          <p>HAVING adds another level of filtering to your grouped queries, beyond the capabilities of WHERE</p>
+        <div class="panel-grey" style="text-aligh:left;">
+              <code>
+                SELECT column_name, aggregate_function(column_name)<br>
+              FROM table_name<br>
+              WHERE column_name operator value<br>
+              GROUP BY column_name;<br>
+              HAVING column_name operator value
+              </code>
+            </div>
+            <br>
+              <div class="panel-grey" style="text-aligh:left;">
+              <code>SELECT title , studio<br>
+              FROM film<br>
+              WHERE rev < 500 <br>
+              GROUP BY studio<br>
+              HAVING year >= 2010;<br>
+              </code>
+
+            </div>
+            </section>
+
+          <section title="12">
+           <div>The query return would look like this: </div>
+           <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-031e">title</th>
+    <th class="tg-031e">studio</th>
+    <th class="tg-031e">year</th>
+  </tr>
+  <tr>
+    <td class="tg-031e">How to Train Your Dragon</td>
+    <td class="tg-031e">P/DW</td>
+    <td class="tg-031e">2010</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Django Unchained</td>
+    <td class="tg-031e">Wein.</td>
+    <td class="tg-031e">2012</td>
+  </tr>
+</table>
+        </section>
+
+        <section title="13">
+          <p>HAVING allows you to add another level of granularity to your queries. Since it works with the operators and aggregate functions, it affords you the ability to have extremely precise data pulls.</p>
+        </section>
+
+        <section title="14">
+          <p>Test out HAVING  <a href="http://sqlfiddle.com/#!9/67168/6">here</a></p>
+        </section>
+
+        <section title="15">
+          <p>Please click here to head back to the Circuits platform.</p>
+        </section>
+
+<!--    <section title="feedback form">
+          <div>
+            <iframe src="https://docs.google.com/forms/d/1pPKvTQRUxF-j5snyHWI-OD7YXGa6T_1p0lKUTI4Uhls/viewform?embedded=true"width="720px" height="600px" frameborder="0">Loading...</iframe>
+          </div>
+        </section> -->
+
+      </div>
+
+      <aside class="footer">
+        <div class="toc">
+        </div>
+      </aside>
+    </div>
+
+      <script src="../lib/js/head.min.js"></script>
+      <script src="../js/reveal.js"></script>
+      <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+      
+      <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+              controls: true,
+              progress: true,
+              history: true,
+              slideNumber: false,
+              center: true,
+              width: 1366,
+              height: 768,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+              });
+
+            Reveal.addEventListener('slidechanged', function(event) {
+              removeTransition(event.indexh);
+              showSlideNumber(event.indexh);
+            });
+
+            Reveal.addEventListener('ready', function(event) {
+              removeTransition(event.indexh);
+              showSlideNumber(event.indexh);
+            });
+
+            function removeTransition(indexh) {
+              if (indexh === 8 || indexh === 15 ||indexh === 16 ||indexh === 17 ||indexh === 18 ||indexh === 19 ||indexh === 20 ||indexh === 21) {
+                Reveal.configure({
+                 transition: Reveal.getQueryHash().transition || 'none', });;
+              } else {
+                Reveal.configure({
+                 transition: Reveal.getQueryHash().transition || 'linear', });;
+              }
+            }
+
+            function showSlideNumber(indexh) {
+              if (indexh === 0) {
+                $('.slide-number').hide();
+              } else {
+                $('.slide-number').text(indexh);
+                $('.slide-number').show();
+              }
+            }
+
+          </script>
+
+
+</body>
+</html>

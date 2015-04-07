@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+    <title>General Assembly Data Analytics Circuit</title>
+
+<!--Content Title  -->
+    <meta name="description" content="Content Title">
+
+<!--Write your name here so that you get credit  -->
+    <meta name="author" content="My Name">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+     <link href="https://ga-core-production-herokuapp-com.global.ssl.fastly.net/assets/favicon-457864a24ef9216d266a9db330e606f1.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+    <!-- GA css port -->
+    <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+    
+    <!--Reveal CSS  -->
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/ga_theme.css" id="theme">
+    <link rel='stylesheet' href="../styles/ga.css">
+    <link rel='stylesheet' href="../styles/all.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/atelier-heath.dark.css">
+     <!--
+    <link rel='stylesheet' href='../styles/main.css'>
+    -->
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section title="title-slide">
+        <!--Content Title  -->
+        <h1 class="large">This is the Title of my Content</h1>
+        </section>
+
+        <section>
+        <!--Here is your first slide!-->
+        </section>
+        
+<!-- end of slides -->
+      </div>
+
+<!--This is the grey footer which contains the nav and slide number -->
+      <aside class="footer">
+        <div class="toc">
+        </div>
+      </aside>
+
+<!--This is the floating "get started" icon on the title slide-->
+      <aside class="get_started">
+        <div id= "get_started" class="floating">
+        </div>
+      </aside>
+
+    </div>
+
+<!--Please don't touch this stuff-->
+      <script src="../lib/js/head.min.js"></script>
+      <script src="../js/reveal.js"></script>
+      <script src="../js/ga.js"></script>
+      <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+      
+      <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+              controls: true,
+              progress: true,
+              history: true,
+              slideNumber: false,
+              center: true,
+              width: 1280,
+              height: 700,
+
+              transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+              // Optional reveal.js plugins
+              dependencies: [
+                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true }
+              ]
+            });
+
+          Reveal.addEventListener('slidechanged', function(event) {
+            removeTransition(event.indexh);
+            showSlideNumber(event.indexh);
+            showGetStarted(event.indexh);
+          });
+
+          Reveal.addEventListener('ready', function(event) {
+            removeTransition(event.indexh);
+            showSlideNumber(event.indexh);
+            showGetStarted(event.indexh);
+          });
+
+          function removeTransition(indexh) {
+            if (indexh === 4 || indexh === 5 || indexh === 6 || indexh === 7 || indexh === 10 || indexh === 11 || indexh === 12 ||indexh === 13 ||indexh === 16 ||indexh === 17 ||indexh === 18 ||indexh === 21 || indexh === 22 || indexh === 23 || indexh === 26 || indexh === 27 || indexh === 30 || indexh === 31 || indexh === 32 || indexh === 33 || indexh === 34 || indexh === 35 || indexh === 26 || indexh === 37 || indexh === 38) {
+              Reveal.configure({
+               transition: Reveal.getQueryHash().transition || 'none', });;
+            } else {
+              Reveal.configure({
+               transition: Reveal.getQueryHash().transition || 'slide', });;
+            }
+          }
+
+          function showSlideNumber(indexh) {
+            if (indexh === 0) {
+              $('.slide-number').hide();
+            } else {
+              $('.slide-number').text(indexh);
+              $('.slide-number').show();
+            }
+          }
+
+          function showGetStarted(indexh) {
+            if (indexh === 0) {
+              $('.floating').show();
+            }
+            if (indexh !== 0) {
+              $('.floating').hide();
+            }
+          }
+        </script>
+  </body>
+</html>
